@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <style>
-  body {background-color: #D8D8D8;}
-  h1 {color: #088A29;}
-</style>
+        body {background-color: #D8D8D8;}
+        h1 {color: #088A29;}
+    </style>
 <head>
     <title><center>Graphene Sensing Element Results</center></title>
     <meta charset="utf-8" />
@@ -11,28 +11,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
 </head>
+
 <body>
-    
-  <h1><center>HND Lab</center></h1>
-  <h2><center>UH Manoa</center></h2>
-  <h3><center>Jessica Grazziotin</center></h3>
+    <h1><center>HND Lab</center></h1>
+    <h2><center>UH Manoa</center></h2>
+    <h3><center>Jessica Grazziotin</center></h3>
     <div id="chart"></div>
     <script>
-var chart = c3.generate({
-    data: {
-        columns: [
-            ['Light', 47],
-            ['Darkness', 40],
-            ['3rd value', 13],
-        ],
-        type : 'donut'
-    },
-    donut: {
-        title: "Light Exposure:",
-    }
-});
+    var chart = c3.generate({
+        data: {
+            columns: [
+                ['Light', 47],
+                ['Darkness', 40],
+                ['3rd value', 13],
+            ],
+            type : 'donut'
+        },
+        donut: {
+            title: "Light Exposure:",
+        }
+    });
     </script>
-    
+
     <center><img src="http://www.uhmshuttle.com/Images/clientLogo.jpg" alt="Our logo" width="1025" height="359"></center>
 </body>
 </html>
