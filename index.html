@@ -19,12 +19,15 @@
     <div id="chart"></div>
     <script>
         var chart = c3.generate({
-            data: {
+<--            data: {
                 columns: [
                     ['data1', 30, 200, 700, 400, 150, 250],
                     ['data2', 50, 20, 10, 40, 15, 25]
                 ]
-            }
+                } -->
+                data: {
+                    url: '/data/test_data.csv'
+                }
         });
     </script>
     <center><img src="http://www.uhmshuttle.com/Images/clientLogo.jpg" alt="Our logo" width="1025" height="359"></center>
