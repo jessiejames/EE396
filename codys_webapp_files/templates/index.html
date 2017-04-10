@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>SocketIO</title>
+	<script src="http://192.168.2.2:8000/templates/d3/d3.min.js" charset="utf-8"></script>
+	<!-- Load c3.css -->
+	<link href="http://192.168.2.2:8000/templates/c3-0.4.11/c3.css" rel="stylesheet" type="text/css">
+	<!-- Load d3.js and c3.js -->
+	<script src="http://192.168.2.2:8000/templates/c3-0.4.11/c3.min.js"></script>
+	<!-- Load socket-IO -->
+	<script type="text/javascript" src="http://192.168.2.2:8000/templates/socket.io-client-master/dist/socket.io.js"></script>
+
+	<!-- Load jquery -->
+	<script src="http://192.168.2.2:8000/templates/jquery/jquery-master/src/jquery.min.js"></script>
+        
+	<!-- Load javascript code-->
+	<script src="http://192.168.2.2:8000/templates/js/app.js"></script>
+    </head>
+<body>
+<div class="jumbotron">
+    <h1>Asynchronous Flask Communication</h1>
+</div>
+
+<div class="container" id="content">
+    <div class="row">
+        <p>Asynchronous page updates will appear here:</p>
+        <h3>Received Data:</h3>
+	<!-- Chedit: Load list below from the "log" javascript variables -->
+        <div id="log">
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
+	
+	

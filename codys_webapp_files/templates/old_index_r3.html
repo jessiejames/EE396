@@ -1,0 +1,83 @@
+<html>
+    <head>
+	<title>SocketIO</title>
+	
+	<script src="http://192.168.2.2:8000/templates/d3/d3.min.js" charset="utf-8"></script>
+	<!-- Load c3.css -->
+	<link href="http://192.168.2.2:8000/templates/c3-0.4.11/c3.css" rel="stylesheet" type="text/css">
+        
+	<!-- Load d3.js and c3.js -->
+	<script src="http://192.168.2.2:8000/templates/c3-0.4.11/c3.min.js"></script>
+
+	<!-- Load socket-IO -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.6/socket.io.js"></script>
+	
+	<!-- Load jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        
+	<script type="text/javascript" charset="utf-8">
+	// Begin Javascript
+	    // Start IO connection to the server	    
+	    var socket = io.connect('http://' + document.domain + ':' + location.port);
+            
+	    // Callback that triggers when "echo2" event is emitted
+	    socket.on('echo2', function(data){
+                $('#response2').html('<p>' +data.echo2+'</p>');
+            });
+	    
+	    // chedit: add another response2 area here            
+
+            function send(){
+		// Note: below 'send_message' needs to match function declared in python file
+                // Trigger the event with a button
+		socket.emit('send_message', {message : $('form textarea').val()});
+		// chedit: for below, put data where world is:
+		//socket.emit('send_message', {message : 'world'});
+		// chedit: add more emissions here.  Need to find out how this works
+		//socket.emit('send_extra', {hello: 'world' });
+	    }
+	
+       // End JavaScript
+	</script>
+	
+        <style>
+            div{
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                width: 400px;
+            }
+            textarea{
+                width: 100%;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+	<div class="input">
+            <form>
+                <textarea placeholder="Send a message to the server..."></textarea>
+                <button type="button" onclick="send(); return false;">Send</button>
+            </form>
+        </div>
+
+        <div id="response2">
+        </div>
+
+	<div id="chart"></div>
+
+    </body>
+    <script>
+	// Note: need javascript after Body to allow libraries to load first
+	var chart = c3.generate({
+	bindto: '#chart',
+	data: {
+	   columns: [
+		['data1', 30, 200, 100, 400, 150, 250],
+		['data2', 50, 20, 10, 40, 15, 25]
+	   ]
+	}
+        });
+    </script>
+</html>
+
